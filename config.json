@@ -1,0 +1,8 @@
+{
+  "adminCode": "quitnow",
+  "pauseDuration": 3000,
+  "videosDir": "./videos",
+  "volumeStep": 0.05,
+  "initialVolume": 1.0,
+  "pauseMessage": ""
+}

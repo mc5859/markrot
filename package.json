@@ -1,0 +1,12 @@
+{
+  "name": "markrot",
+  "version": "1.0.0",
+  "description": "Video screening kiosk — Every video I made in the last 2 years",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^32.0.0"
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+videos/*.mp4
+videos/*.mov
+videos/*.webm
+videos/*.mkv
+videos/*.avi

@@ -1,0 +1,65 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  cursor: none;
+}
+
+#player {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#pause-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+#pause-msg {
+  color: #333;
+  font-family: monospace;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+#admin-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 20;
+}
+
+#admin-overlay p {
+  color: #fff;
+  font-family: monospace;
+  font-size: 1.4rem;
+}
+
+#admin-overlay .sub {
+  color: #888;
+  font-size: 1rem;
+}

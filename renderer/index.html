@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' file:; script-src 'self'; style-src 'self'">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <video id="player" preload="auto"></video>
+
+  <div id="pause-overlay" class="hidden">
+    <span id="pause-msg"></span>
+  </div>
+
+  <div id="admin-overlay" class="hidden">
+    <p>Exit kiosk mode?</p>
+    <p class="sub">Press Enter to confirm &nbsp;&bull;&nbsp; Escape to cancel</p>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
