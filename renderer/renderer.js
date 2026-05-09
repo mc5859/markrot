@@ -95,34 +95,29 @@
 
     switch (e.key) {
       case ' ':
+      case 'ArrowLeft':
+      case 'ArrowRight':
         e.preventDefault()
         if (state.current === State.PLAYING) skipToNext()
-        break
-      case 'ArrowUp':
-      case ']':
-        e.preventDefault()
-        adjustVolume(state.config.volumeStep)
-        break
-      case 'ArrowDown':
-      case '[':
-        e.preventDefault()
-        adjustVolume(-state.config.volumeStep)
         break
     }
   })
 
-  function adjustVolume (delta) {
-    state.volume = Math.max(0, Math.min(1, state.volume + delta))
-    player.volume = state.volume
-  }
-
   // --- Video end ---
   player.addEventListener('ended', startPause)
+
+  function shuffle (arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]]
+    }
+    return arr
+  }
 
   // --- Initialization ---
   window.kiosk.onInit(function (data) {
     state.config = data.config
-    state.videos = data.videos
+    state.videos = shuffle(data.videos.slice())
     state.volume = data.config.initialVolume
 
     if (state.videos.length === 0) {

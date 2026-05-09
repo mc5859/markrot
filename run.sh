@@ -4,6 +4,11 @@
 cd "$(dirname "$0")"
 while true; do
   npm start
-  echo "App exited. Restarting in 2 seconds..."
+  EXIT_CODE=$?
+  if [ $EXIT_CODE -eq 0 ]; then
+    echo "App exited cleanly."
+    break
+  fi
+  echo "App crashed (code $EXIT_CODE). Restarting in 2 seconds..."
   sleep 2
 done
