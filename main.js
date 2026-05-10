@@ -39,12 +39,8 @@ function loadVideos (videosDir) {
   }
 
   return files
-    .filter(f => /^\d+\.(mp4|mov|webm|mkv|avi)$/i.test(f))
-    .sort((a, b) => {
-      const numA = parseInt(path.basename(a), 10)
-      const numB = parseInt(path.basename(b), 10)
-      return numA - numB
-    })
+    .filter(f => /\.(mp4|mov|webm|mkv|avi)$/i.test(f) && !f.startsWith('.'))
+    .sort()
     .map(f => 'file://' + path.join(resolved, f))
 }
 
