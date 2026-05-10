@@ -8,7 +8,8 @@ let adminExiting = false
 
 const DEFAULT_CONFIG = {
   adminCode: 'quitnow',
-  pauseDuration: 3000,
+  pauseDuration: 1500,
+  skipPauseDuration: 500,
   videosDir: './videos',
   volumeStep: 0.05,
   initialVolume: 1.0,

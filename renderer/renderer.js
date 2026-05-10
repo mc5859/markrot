@@ -47,7 +47,7 @@
     })
   }
 
-  function startPause () {
+  function startPause (duration) {
     state.current = State.PAUSING
     player.pause()
     player.src = ''
@@ -58,12 +58,12 @@
     state.pauseTimer = setTimeout(() => {
       const next = (state.index + 1) % state.videos.length
       playVideo(next)
-    }, state.config.pauseDuration)
+    }, duration !== undefined ? duration : state.config.pauseDuration)
   }
 
   function skipToNext () {
     clearTimeout(state.pauseTimer)
-    startPause()
+    startPause(state.config.skipPauseDuration)
   }
 
   function showAdminPrompt () {
